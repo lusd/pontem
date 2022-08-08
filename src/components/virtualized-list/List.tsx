@@ -18,23 +18,29 @@ export const List = React.memo(({ items }: IListProps) => {
   const [availableHeight, setAvailableHeight] = useState(window.innerHeight);
   const [availableWidth, setAvailableWidth] = useState(window.innerWidth);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const { value: searchValue, option: searchOption } = useSelector(selectSearch);
 
   const handleCloseModal = useCallback(() => {
-    setModalIsOpen(false);
     setModalIndex(null);
   }, []);
   const handleOpenModal = useCallback((index: number) => {
-    setModalIsOpen(true);
     setModalIndex(index);
   }, []);
 
-  const height = availableHeight
+  const handleResize = () => {
+    setAvailableHeight(window.innerHeight);
+    const rootElement = document.getElementById('root') as HTMLElement;
+    setAvailableWidth(rootElement.clientWidth);
+  };
+
+  const height = useMemo(() => (
+    availableHeight
       - cssVars.HEADER_HEIGHT
       - cssVars.SEARCH_BLOCK_HEIGHT
-      - cssVars.SWAP_BLOCK_VERTICAL_PADDING;
+      - cssVars.SWAP_BLOCK_VERTICAL_PADDING
+  ), [availableHeight]);
+
   const itemSize = Number(cssVars.SWAP_BLOCK_HEIGHT) + Number(cssVars.SWAP_BLOCK_GAP);
 
   const filteredList = useMemo(() => items.filter(({ title, description, selected }) => {
@@ -51,11 +57,6 @@ export const List = React.memo(({ items }: IListProps) => {
   }), [items, searchValue, searchOption]);
 
   useEffect(() => {
-    function handleResize() {
-      setAvailableHeight(window.innerHeight);
-      setAvailableWidth(window.innerWidth);
-    }
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -73,7 +74,7 @@ export const List = React.memo(({ items }: IListProps) => {
         {(({ ...props }) => <Row {...props} handleOpenModal={handleOpenModal} />)}
       </FixedSizeList>
       <ModalComponent
-        modalIsOpen={modalIsOpen}
+        modalIsOpen={modalIndex !== null}
         handleCloseModal={handleCloseModal}
         title="Details"
       >
