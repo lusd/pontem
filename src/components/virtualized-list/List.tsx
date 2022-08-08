@@ -14,6 +14,8 @@ interface IListProps {
   items: ISwapModel[];
 }
 
+const itemSize = Number(cssVars.SWAP_BLOCK_HEIGHT) + Number(cssVars.SWAP_BLOCK_GAP);
+
 export const List = React.memo(({ items }: IListProps) => {
   const [availableHeight, setAvailableHeight] = useState(window.innerHeight);
   const [availableWidth, setAvailableWidth] = useState(window.innerWidth);
@@ -41,8 +43,6 @@ export const List = React.memo(({ items }: IListProps) => {
       - cssVars.SWAP_BLOCK_VERTICAL_PADDING
   ), [availableHeight]);
 
-  const itemSize = Number(cssVars.SWAP_BLOCK_HEIGHT) + Number(cssVars.SWAP_BLOCK_GAP);
-
   const filteredList = useMemo(() => items.filter(({ title, description, selected }) => {
     if (searchOption === buttonNames.selected && !selected) {
       return false;
@@ -56,6 +56,7 @@ export const List = React.memo(({ items }: IListProps) => {
     return description.toLowerCase().includes(searchValue.toLowerCase());
   }), [items, searchValue, searchOption]);
 
+  // Add or remove resize addEventListener once the component mounted or unmounted;
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
