@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pontem/static/css/main.0cb488d7.css",
-    "main.js": "/pontem/static/js/main.8b6457b9.js",
+    "main.css": "/pontem/static/css/main.84117da5.css",
+    "main.js": "/pontem/static/js/main.6bdf7bd4.js",
     "static/media/cube_4.svg": "/pontem/static/media/cube_4.4d0b624ef52433586456b87fedea8c60.svg",
     "static/media/cube_3.svg": "/pontem/static/media/cube_3.e1e186510090bfcadc5d8bee7577b76e.svg",
     "static/media/header.svg": "/pontem/static/media/header.fd3357e4f811a7d27f90e9d04b158ab1.svg",
@@ -10,11 +10,11 @@
     "static/media/lens.svg": "/pontem/static/media/lens.d7ad8a37747cd82350a4.svg",
     "index.html": "/pontem/index.html",
     "static/media/cube_0.svg": "/pontem/static/media/cube_0.478af0e3d8452c5024f323a78221f199.svg",
-    "main.0cb488d7.css.map": "/pontem/static/css/main.0cb488d7.css.map",
-    "main.8b6457b9.js.map": "/pontem/static/js/main.8b6457b9.js.map"
+    "main.84117da5.css.map": "/pontem/static/css/main.84117da5.css.map",
+    "main.6bdf7bd4.js.map": "/pontem/static/js/main.6bdf7bd4.js.map"
   },
   "entrypoints": [
-    "static/css/main.0cb488d7.css",
-    "static/js/main.8b6457b9.js"
+    "static/css/main.84117da5.css",
+    "static/js/main.6bdf7bd4.js"
   ]
 }
