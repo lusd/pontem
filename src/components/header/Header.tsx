@@ -6,7 +6,7 @@ import { projectUrl } from '../../index';
 export function Header() {
   return (
     <header className="header">
-      <a className="header_link" href={projectUrl}>
+      <a className="header_link" href={`/${projectUrl}`}>
         <div className="header_logo">
           <img src={logo} alt="header logo" />
         </div>

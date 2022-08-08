@@ -8,7 +8,6 @@ import './search.scss';
 import {
   selectSearch, setSearch, useAppDispatch, setSearchOption, TSearchOptions, buttonNames,
 } from '../../store';
-import { projectUrl } from '../../index';
 
 export function Search() {
   const dispatch = useAppDispatch();
@@ -19,7 +18,7 @@ export function Search() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearch(event.target.value));
     if (event.target.value !== undefined) {
-      navigation(`${projectUrl}/search/${event.target.value}`, { replace: true });
+      navigation(`/search/${event.target.value}`);
     }
   };
 
@@ -30,8 +29,8 @@ export function Search() {
 
   /* This useEffect should proceed once on mount to catch url string as search parameter */
   useEffect(() => {
-    if (pathname !== '/' && pathname.startsWith(`${projectUrl}/search/`)) {
-      const searchParam = pathname.replace(`${projectUrl}/search/`, '');
+    if (pathname !== '/' && pathname.startsWith('/search/')) {
+      const searchParam = pathname.replace('/search/', '');
       const searchString = decodeURIComponent(searchParam);
       dispatch(setSearch(searchString));
     }
