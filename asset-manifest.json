@@ -1,20 +1,14 @@
 {
   "files": {
-    "main.css": "/pontem/static/css/main.84117da5.css",
-    "main.js": "/pontem/static/js/main.6bdf7bd4.js",
-    "static/media/cube_4.svg": "/pontem/static/media/cube_4.4d0b624ef52433586456b87fedea8c60.svg",
-    "static/media/cube_3.svg": "/pontem/static/media/cube_3.e1e186510090bfcadc5d8bee7577b76e.svg",
-    "static/media/header.svg": "/pontem/static/media/header.fd3357e4f811a7d27f90e9d04b158ab1.svg",
-    "static/media/cube_2.svg": "/pontem/static/media/cube_2.40738fd6edc0eab7430b4b47fab5a598.svg",
-    "static/media/cube_1.svg": "/pontem/static/media/cube_1.75579e8c1c4eac66083cac619ab519bc.svg",
-    "static/media/lens.svg": "/pontem/static/media/lens.d7ad8a37747cd82350a4.svg",
-    "index.html": "/pontem/index.html",
-    "static/media/cube_0.svg": "/pontem/static/media/cube_0.478af0e3d8452c5024f323a78221f199.svg",
-    "main.84117da5.css.map": "/pontem/static/css/main.84117da5.css.map",
-    "main.6bdf7bd4.js.map": "/pontem/static/js/main.6bdf7bd4.js.map"
+    "main.css": "/json-editor/static/css/main.aa3b7416.css",
+    "main.js": "/json-editor/static/js/main.3b517289.js",
+    "static/media/lens.svg": "/json-editor/static/media/lens.d7ad8a37747cd82350a4.svg",
+    "index.html": "/json-editor/index.html",
+    "main.aa3b7416.css.map": "/json-editor/static/css/main.aa3b7416.css.map",
+    "main.3b517289.js.map": "/json-editor/static/js/main.3b517289.js.map"
   },
   "entrypoints": [
-    "static/css/main.84117da5.css",
-    "static/js/main.6bdf7bd4.js"
+    "static/css/main.aa3b7416.css",
+    "static/js/main.3b517289.js"
   ]
 }
