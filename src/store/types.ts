@@ -1,12 +1,14 @@
-import { buttonNames } from './consts';
-
-export interface ISwapModel {
+export interface IJSONModel {
   id: string;
   address: string;
-  title: string;
-  description: string;
-  blocksCount: number;
-  selected?: boolean;
+  name: string;
+  email: string;
+  phone?: string;
+  about?: string;
+  age?: number;
+  company?: string;
+  isActive?: boolean;
+  picture?: string;
+  registered?: string;
+  tags?: string[];
 }
-
-export type TSearchOptions = keyof typeof buttonNames;

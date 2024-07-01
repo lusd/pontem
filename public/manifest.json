@@ -1,11 +1,11 @@
 {
-  "short_name": "Pontem blocks",
-  "name": "Pontem blocks test case",
+  "short_name": "Json editor",
+  "name": "Json Editor Test",
   "icons": [
     {
-      "src": "android-chrome-192x192.png",
+      "src": "android-chrome-40x41.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "40x41"
     }
   ],
   "start_url": ".",

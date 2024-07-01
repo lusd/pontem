@@ -3,31 +3,28 @@ import { useSelector } from 'react-redux';
 
 import './App.scss';
 import {
-  selectItems, selectLoading, useAppDispatch, fetchBlocksData,
+	selectItems, selectLoading,
 } from './store';
 import { Header } from './components/header';
 import { List } from './components/virtualized-list';
 import { Loading } from './components/loading';
 import { Search } from './components/search';
+import { JsonButtons } from './components/jsonButtons';
 
 function App() {
-  const dispatch = useAppDispatch();
-  const isLoading = useSelector(selectLoading);
-  const storeData = useSelector(selectItems);
+	const isLoading = useSelector(selectLoading);
+	const storeData = useSelector(selectItems);
 
-  useEffect(() => {
-    dispatch(fetchBlocksData());
-  }, []);
-
-  return (
-    <div className="app">
-      <Header />
-      <main className="main">
-        <Search />
-        {isLoading ? <Loading /> : <List items={storeData} />}
-      </main>
-    </div>
-  );
+	return (
+		<div className="app">
+			<Header />
+			<main className="main">
+				<Search />
+				<JsonButtons />
+				{isLoading ? <Loading /> : <List items={storeData} />}
+			</main>
+		</div>
+	);
 }
 
 export default App;

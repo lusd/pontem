@@ -1,25 +1,25 @@
 import React, { useCallback } from 'react';
 
-import { Swap } from '../swap';
-import { ISwapModel } from '../../store';
+import { Block } from '../block';
+import { IJSONModel } from '../../store';
 
 interface IRowProps {
   style: React.CSSProperties;
   index: number;
-  data: Array<ISwapModel>;
+  data: Array<IJSONModel>;
   handleOpenModal: (index: number) => void;
 }
 
 export function Row({
-  style, index, data, handleOpenModal,
+	style, index, data, handleOpenModal,
 }: IRowProps) {
-  const onOpenModal = useCallback(() => {
-    handleOpenModal(index);
-  }, [handleOpenModal, index]);
+	const onOpenModal = useCallback(() => {
+		handleOpenModal(index);
+	}, [handleOpenModal, index]);
 
-  return (
-    <div style={style}>
-      <Swap {...data[index]} onOpenModal={onOpenModal} />
-    </div>
-  );
+	return (
+		<div style={style}>
+			<Block jsonData={data[index]} onOpenModal={onOpenModal} />
+		</div>
+	);
 }
